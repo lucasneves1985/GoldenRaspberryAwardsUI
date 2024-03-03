@@ -1,0 +1,15 @@
+<table class="gra-table">
+    <thead>
+        <th *ngFor="let column of columns">{{column.title}}</th>
+    </thead>
+    <tbody>
+        <tr *ngFor="let data of dataList">
+            <td *ngFor="let column of columns">
+                {{data[column.value]}}
+            </td>
+        </tr>
+    </tbody>
+    <tfoot>
+
+    </tfoot>
+</table>

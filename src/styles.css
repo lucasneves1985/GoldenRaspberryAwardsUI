@@ -1,0 +1,89 @@
+/* You can add global styles to this file, and also import other style files */
+body {
+    padding: 0;
+    margin: 0;
+    font-family: Tahoma, "Trebuchet MS", sans-serif;
+    color: #343a40;
+    font-size: 12px;
+}
+
+/*Container of views*/
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: stretch;
+}
+
+/*Table */
+.gra-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.gra-table th, td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+}
+
+.gra-table th {
+    font-weight: bold;
+    /*width: 50%;*/
+    background-color: #f4f4f4;
+}
+
+/*Pagination*/
+.gra-pagination {
+    justify-content: center;
+    padding: 0;
+    display: flex;
+    width: 100%;
+    background-color: #f4f4f4;
+    box-sizing: border-box;
+
+}
+
+
+.gra-pagination .gra-item-page {
+    padding: 5px 10px;
+    margin: 0px;
+    color: #333;
+    cursor: pointer;
+}
+
+
+.gra-pagination .gra-item-page:hover {
+    background-color: #dfdede;
+
+}
+
+.gra-pagination .gra-item-page.active {
+    background-color: #007bff;
+    color: #fff;
+}
+
+
+
+/*Card for content of view*/
+.gra-card {
+    width: 49%;
+    box-sizing: border-box;
+    padding: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    min-height: 100px;
+    margin-bottom: 15px;
+
+}
+
+@media screen and (max-width:768px) {
+    .container {
+        flex-direction: column;
+    }
+    .gra-card {
+        width: 100%;
+
+    }
+}

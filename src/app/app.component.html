@@ -1,0 +1,21 @@
+<div class="gra-app">
+  <header class="header">
+    <h3>Frontend Angular Test</h3>
+
+  </header>
+  <aside class="gra-menu">
+    <nav>
+      <ul class="gra-menu-item">
+        <li><a routerLink="/" routerLinkActive="active"
+            [routerLinkActiveOptions]="{exact: true}">Dashboard</a></li>
+        <li><a routerLink="/list" routerLinkActive="active"
+            [routerLinkActiveOptions]="{exact: true}">List </a></li>
+
+      </ul>
+    </nav>
+  </aside>
+  <main class="content">
+    <router-outlet></router-outlet>
+  </main>
+
+</div>

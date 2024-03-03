@@ -1,0 +1,62 @@
+
+.gra-app {
+    display: grid;
+    height: 100vh;
+    grid-template-columns: 200px 1fr;
+    grid-template-rows: 60px 1fr;
+    grid-template-areas:
+      "header header"
+      "menu content";
+}
+
+.header {
+    background-color: #343a40;
+    color: white;
+    grid-area: header;
+}
+.header h3 {
+    padding-left: 20px;
+}
+
+
+.content {
+    grid-area: content;
+    padding: 8px;
+
+}
+
+/* CSS Menu */
+.gra-menu {
+    grid-area: menu;
+    background-color: #f8f9fa;
+}
+
+.gra-menu-item {
+    list-style-type: none;
+    padding: 0;
+}
+
+.gra-menu-item li {
+    padding-left: 15px;
+    padding-bottom: 10px;
+
+}
+
+.gra-menu-item li a.active {
+    color: #007ad9
+}
+.gra-menu-item li a {
+  text-decoration: none;
+  color: #343a40;
+
+}
+
+
+
+
+
+
+
+
+
+

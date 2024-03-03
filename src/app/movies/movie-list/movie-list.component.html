@@ -1,0 +1,71 @@
+<div class="gra-card" style="width: 100%">
+  <h3>List years with multiple winners</h3>
+  <table class="gra-table">
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>
+          Year
+          <div class="filter-container">
+            <input type="number" name="filterYear" [(ngModel)]="filterByYear"
+              (keyup.enter)="getMovies(0)"
+              id="filterYear" placeholder="Filter by year" />
+          </div>
+        </th>
+        <th>Title</th>
+        <th>
+          Winner
+          <div class="filter-container">
+            <select [(ngModel)]="filterWinner" placeholder="Yes/No" (change)="getMovies(0)">
+              <option [value]="''" disabled hidden>Yes/No</option>
+              <option [value]="false">No</option>
+              <option [value]="true">Yes</option>
+            </select>
+          </div>
+        </th>
+      </tr>
+    </thead>
+    <tbody *ngIf="movies.length > 0">
+      <tr *ngFor="let movie of movies">
+        <td>{{movie.id}}</td>
+        <td>{{movie.year}}</td>
+        <td>{{movie.title}}</td>
+        <td>{{movie.winner ? "Yes" : "No"}}</td>
+
+      </tr>
+    </tbody>
+    <tfoot>
+      <tr class="naoSelecionavel">
+        <td colspan="4" style="padding: 0;">
+          <div class="gra-pagination">
+            <div class="gra-item-page" *ngIf="pageable?.page != 1"
+              (click)="getMovies(0)">
+              <fa-icon [icon]="faStepBackward"></fa-icon>
+            </div>
+            <div class="gra-item-page" *ngIf="pageable?.page != 1"
+              (click)="getMovies(pageable.index -1)">
+              <fa-icon [icon]="faCaretLeft"></fa-icon>
+            </div>
+
+            <div *ngFor="let page of pageable?.totalPages; let index = index">
+              <div class="gra-item-page" (click)="getMovies(index)"
+                [ngClass]="index + 1 == pageable.page ? 'active' : ''">
+                {{index + 1}}
+              </div>
+            </div>
+
+            <div class="gra-item-page" *ngIf="!pageable?.last"
+              (click)="getMovies(pageable.index +1)">
+              <fa-icon [icon]="faCaretRight"></fa-icon>
+            </div>
+            <div class="gra-item-page" *ngIf="!pageable?.last"
+              (click)="getMovies(pageable.numberTotalPages -1)">
+              <fa-icon [icon]="faStepForward"></fa-icon>
+            </div>
+
+          </div>
+        </td>
+      </tr>
+    </tfoot>
+  </table>
+</div>

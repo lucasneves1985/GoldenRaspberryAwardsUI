@@ -1,0 +1,54 @@
+/*Table */
+.gra-table {
+    width: 100%;    
+    border-collapse: collapse;
+}
+
+.gra-table th, td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+}
+
+.gra-table th {
+    font-weight: bold;
+    background-color: #f4f4f4;
+}
+
+
+@media screen and (max-width: 728px) {
+    th, td {
+        display: block;
+        width: 100%;
+    }
+}
+
+/*Pagination*/
+.gra-pagination {
+    justify-content: center; 
+    padding: 0;
+    display: flex;
+    width: 100%;
+    background-color: #f4f4f4;
+    box-sizing: border-box;
+
+}
+
+
+.gra-pagination .gra-item-page {
+    padding: 5px 10px;
+    margin: 0px;           
+    color: #333;
+    cursor: pointer;
+}
+
+
+.gra-pagination .gra-item-page:hover {
+    background-color: #dfdede;
+
+}
+
+.gra-pagination .gra-item-page.active {
+    background-color: #007bff;
+    color: #fff;
+}

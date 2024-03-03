@@ -1,0 +1,9 @@
+<h3>List movie winners by year</h3>
+<div class="search">
+    <input type="number" name="filter" id="filter" (keyup.enter)="getMovieWinnerByYear()"
+      class="input-search" [(ngModel)]="filter" placeholder="Search by year">
+    <button class="button-icon">
+      <fa-icon [icon]="faSearch" (click)="getMovieWinnerByYear()"></fa-icon>
+    </button>
+</div>
+<gra-simple-table [columns]="columns" [dataList]="movieWinnerByYear"></gra-simple-table>
